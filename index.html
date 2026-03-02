@@ -1,71 +1,79 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>个人备战积分排名</title>
+<title>1610备战积分统计</title>
 <style>
-*{box-sizing:border-box;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
-body{background:#f2f4f6;padding:12px;color:#222}
-.container{max-width:500px;margin:0 auto}
-.card{background:#fff;border-radius:16px;padding:16px;margin-bottom:12px;box-shadow:0 2px 10px rgba(0,0,0,0.05)}
-.title{text-align:center;font-size:18px;font-weight:bold;margin:10px 0;color:#007aff}
-input{width:100%;padding:10px;border:1px solid #e5e7eb;border-radius:10px;margin:4px 0;font-size:15px}
-/* 去掉数字输入框上下箭头 */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
-input[type=number]{appearance:textfield;-moz-appearance:textfield;}
-.role-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}
-button{width:100%;padding:12px;background:#007aff;color:#fff;border:none;border-radius:12px;font-size:16px;margin-top:6px}
-.rank-item{padding:12px;border-bottom:1px solid #f0f0f0}
-.rank-item:last-child{border-bottom:none}
-.rank-head{display:flex;align-items:center;justify-content:space-between}
-.rank-no{width:28px;font-weight:bold;color:#007aff}
-.rank-name{flex:1;font-weight:500}
-.rank-total{color:#ff3b30;font-weight:bold}
-.role-list{margin-top:6px;padding-left:28px;font-size:13px;color:#666;display:flex;flex-wrap:wrap;gap:6px}
-.role-item{background:#f5f7fa;padding:3px 8px;border-radius:6px}
+  *{box-sizing:border-box;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+  body{background:#f2f4f6;padding:12px;color:#222}
+  .container{max-width:500px;margin:0 auto}
+  .card{background:#fff;border-radius:16px;padding:16px;margin-bottom:12px;box-shadow:0 2px 10px rgba(0,0,0,0.05)}
+  .title{text-align:center;font-size:18px;font-weight:bold;margin:10px 0;color:#007aff}
+  input{width:100%;padding:10px;border:1px solid #e5e7eb;border-radius:10px;margin:4px 0;font-size:15px}
+  
+  /* 去掉分数输入框箭头 */
+  input[type=number]::-webkit-outer-spin-button,
+  input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance:none;
+    margin:0;
+  }
+  input[type=number] {
+    -moz-appearance:textfield;
+    appearance:textfield;
+  }
+
+  .role-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}
+  button{width:100%;padding:12px;background:#007aff;color:#fff;border:none;border-radius:12px;font-size:16px;margin-top:6px}
+  .rank-item{padding:12px;border-bottom:1px solid #f0f0f0}
+  .rank-item:last-child{border-bottom:none}
+  .rank-head{display:flex;align-items:center;justify-content:space-between}
+  .rank-no{width:28px;font-weight:bold;color:#007aff}
+  .rank-name{flex:1;font-weight:500}
+  .rank-total{color:#ff3b30;font-weight:bold}
+  .role-list{margin-top:6px;padding-left:28px;font-size:13px;color:#666;display:flex;flex-wrap:wrap;gap:6px}
+  .role-item{background:#f5f7fa;padding:3px 8px;border-radius:6px}
 </style>
 </head>
 <body>
 <div class="container">
-<div class="card">
-<div class="title">1610备战积分统计</div>
-<input id="username" placeholder="请输入您的大名">
-<input id="team" placeholder="请输入所在联盟">
-<div class="role-grid">
+  <div class="card">
+    <div class="title">1610备战积分统计</div>
+    
+    <input id="realname" placeholder="请输入您的大名">
+    <input id="userid" placeholder="所在联盟">
+    
+    <div class="role-grid">
+      <input placeholder="大号" class="rname">
+      <input type="number" placeholder="大号分数" class="rscore">
+      <input placeholder="小号1" class="rname">
+      <input type="number" placeholder="分数" class="rscore">
+      <input placeholder="小号2" class="rname">
+      <input type="number" placeholder="分数" class="rscore">
+      <input placeholder="小号3" class="rname">
+      <input type="number" placeholder="分数" class="rscore">
+      <input placeholder="小号4" class="rname">
+      <input type="number" placeholder="分数" class="rscore">
+      <input placeholder="小号5" class="rname">
+      <input type="number" placeholder="分数" class="rscore">
+      <input placeholder="小号6" class="rname">
+      <input type="number" placeholder="分数" class="rscore">
+      <input placeholder="小号7" class="rname">
+      <input type="number" placeholder="分数" class="rscore">
+      <input placeholder="小号8" class="rname">
+      <input type="number" placeholder="分数" class="rscore">
+      <input placeholder="小号9" class="rname">
+      <input type="number" placeholder="分数" class="rscore">
+      <input placeholder="小号10" class="rname">
+      <input type="number" placeholder="分数" class="rscore">
+    </div>
+    <button onclick="submit()">提交并更新排名</button>
+  </div>
 
-<input placeholder="大号" class="rname">
-<input type="number" placeholder="大号分数" class="rscore">
-<input placeholder="小号1" class="rname">
-<input type="number" placeholder="分数" class="rscore">
-<input placeholder="小号2" class="rname">
-<input type="number" placeholder="分数" class="rscore">
-<input placeholder="小号3" class="rname">
-<input type="number" placeholder="分数" class="rscore">
-<input placeholder="小号4" class="rname">
-<input type="number" placeholder="分数" class="rscore">
-<input placeholder="小号5" class="rname">
-<input type="number" placeholder="分数" class="rscore">
-<input placeholder="小号6" class="rname">
-<input type="number" placeholder="分数" class="rscore">
-<input placeholder="小号7" class="rname">
-<input type="number" placeholder="分数" class="rscore">
-<input placeholder="小号8" class="rname">
-<input type="number" placeholder="分数" class="rscore">
-<input placeholder="小号9" class="rname">
-<input type="number" placeholder="分数" class="rscore">
-<input placeholder="小号10" class="rname">
-<input type="number" placeholder="分数" class="rscore">
-
-</div>
-<button onclick="submit()">提交并更新排名</button>
-</div>
-
-<div class="card">
-<div class="title">个人备战积分排名</title>
-<div id="rank"></div>
-</div>
+  <div class="card">
+    <div class="title">个人备战积分排名</div>
+    <div id="rank"></div>
+  </div>
 </div>
 
 <script>
@@ -79,7 +87,7 @@ function load(){
     <div class="rank-item">
       <div class="rank-head">
         <div class="rank-no">${i+1}</div>
-        <div class="rank-name">${item.showName}</div>
+        <div class="rank-name">${item.name}</div>
         <div class="rank-total">${item.total.toFixed(1)}分</div>
       </div>
       <div class="role-list">${roles}</div>
@@ -89,72 +97,67 @@ function load(){
 }
 
 function submit(){
-  let username = document.getElementById("username").value.trim();
-  let team = document.getElementById("team").value.trim();
-  if(!username){alert("请输入您的名号");return}
-  if(!team){alert("请输入所在联盟");return}
+  let realname = document.getElementById("realname").value.trim()
+  let team = document.getElementById("userid").value.trim()
+  
+  if(!realname){alert("请输入大名");return}
+  
+  let name = realname + (team ? " | " + team : "")
 
-  let key = username + "|" + team;
-  let showName = username + " — " + team;
-
-  if(username === "删除"){
-    let pwd = prompt("请输入管理员密码：");
-    if(pwd !== "19891213"){alert("密码错误");return}
-    let list = JSON.parse(localStorage.getItem("scoreList")||"[]");
-    list = list.filter(x=>x.showName !== team);
-    localStorage.setItem("scoreList",JSON.stringify(list));
-    load();
-    alert("已删除："+team);
-    document.getElementById("username").value="";
-    document.getElementById("team").value="";
+  if(name.startsWith("删除 ")){
+    let pwd = prompt("请输入管理员密码：")
+    if(pwd !== "123456"){alert("密码错误");return}
+    let delName = name.replace("删除 ","")
+    let list = JSON.parse(localStorage.getItem("scoreList")||"[]")
+    list = list.filter(x=>x.name !== delName)
+    localStorage.setItem("scoreList",JSON.stringify(list))
+    load()
+    alert("已删除："+delName)
     return
   }
 
-  if(username === "清空全部"){
-    let pwd = prompt("请输入管理员密码：");
-    if(pwd !== "19891213"){alert("密码错误");return}
-    localStorage.setItem("scoreList","[]");
-    load();
-    alert("已清空全部数据");
-    document.getElementById("username").value="";
-    document.getElementById("team").value="";
+  if(name === "清空全部"){
+    let pwd = prompt("请输入管理员密码：")
+    if(pwd !== "123456"){alert("密码错误");return}
+    localStorage.setItem("scoreList","[]")
+    load()
+    alert("已清空全部数据")
     return
   }
 
-  let scores = document.querySelectorAll(".rscore");
-  let big = parseInt(scores[0].value) || 0;
-  let smallTotal = 0;
+  let scores = document.querySelectorAll(".rscore")
+  let big = parseInt(scores[0].value) || 0
+  let smallTotal = 0
   for(let i=1;i<=10;i++){
-    smallTotal += parseInt(scores[i].value) || 0;
+    smallTotal += parseInt(scores[i].value) || 0
   }
-  let total = big + smallTotal * 0.7;
+  let total = big + smallTotal * 0.7
 
-  let roles = [];
-  let names = document.querySelectorAll(".rname");
+  let roles = []
+  let names = document.querySelectorAll(".rname")
   for(let i=0;i<11;i++){
-    let n = names[i].value.trim();
-    let s = parseInt(scores[i].value) || 0;
+    let n = names[i].value.trim()
+    let s = parseInt(scores[i].value) || 0
     if(n && s>0){
-      roles.push({name:n, score:s});
+      roles.push({name:n, score:s})
     }
   }
 
   if(big == 0 && smallTotal == 0){alert("至少填写一个有效分数");return}
 
-  let list = JSON.parse(localStorage.getItem("scoreList")||"[]");
-  list = list.filter(x=>x.key !== key);
-  list.push({key, showName, total, roles});
-  localStorage.setItem("scoreList",JSON.stringify(list));
+  let list = JSON.parse(localStorage.getItem("scoreList")||"[]")
+  list = list.filter(x=>x.name !== name)
+  list.push({name,total,roles})
+  localStorage.setItem("scoreList",JSON.stringify(list))
 
-  document.getElementById("username").value="";
-  document.getElementById("team").value="";
-  names.forEach((x,i)=>{x.value="";scores[i].value=""});
-  load();
+  document.getElementById("realname").value = ""
+  document.getElementById("userid").value = ""
+  names.forEach((x,i)=>{x.value="";scores[i].value=""})
+
+  load()
 }
 
-load();
+load()
 </script>
-  
 </body>
 </html>
-
